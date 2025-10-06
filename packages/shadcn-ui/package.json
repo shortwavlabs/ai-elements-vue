@@ -2,7 +2,6 @@
   "name": "@repo/shadcn-ui",
   "private": true,
   "version": "0.0.0",
-  "exports": {},
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",
     "typescript": "latest"

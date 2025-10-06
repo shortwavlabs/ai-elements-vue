@@ -12,6 +12,8 @@
   "dependencies": {
     "@nuxt/fonts": "0.11.4",
     "@nuxtjs/tailwindcss": "6.14.0",
+    "@repo/elements": "workspace:*",
+    "@repo/shadcn-ui": "workspace:*",
     "nuxt": "^4.1.2",
     "vue": "^3.5.22",
     "vue-router": "^4.5.1"

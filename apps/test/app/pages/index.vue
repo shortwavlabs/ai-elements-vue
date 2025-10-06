@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>Ai Elements Vue</h1>
+    <h1>AI Elements Vue</h1>
   </div>
 </template>
