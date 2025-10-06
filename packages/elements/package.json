@@ -1,0 +1,22 @@
+{
+  "name": "@repo/elements",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    "./*": "./src/*.vue"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "packageManager": "pnpm@10.18.1",
+  "dependencies": {
+    "@repo/shadcn-ui": "workspace:*",
+    "ai": "5.0.60",
+    "lucide-vue-next": "^0.544.0",
+    "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "typescript": "latest"
+  }
+}
