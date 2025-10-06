@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",
-    "typescript": "5.5.4"
+    "@types/node": "^24.7.0",
+    "typescript": "5.5.4",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
