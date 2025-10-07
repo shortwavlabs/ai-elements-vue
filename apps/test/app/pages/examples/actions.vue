@@ -47,15 +47,16 @@ const actions = [
 ]
 </script>
 <template>
-  <Actions>
-    <Action
-      v-for="action in actions"
-      :key="action.label"
-      :label="action.label"
-      size="sm"
-      @click="action.handler"
-    >
-      <component :is="action.icon" :size="18" />
-    </Action>
-  </Actions>
+  <div>
+    <Actions>
+      <Action
+        v-for="action in actions"
+        :key="action.label"
+        :label="action.label"
+        @click="action.handler"
+      >
+        <component :is="action.icon" :size="18" />
+      </Action>
+    </Actions>
+  </div>
 </template>
