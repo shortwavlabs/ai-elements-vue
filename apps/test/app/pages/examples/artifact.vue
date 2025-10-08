@@ -60,6 +60,7 @@ import {
       </div>
     </ArtifactHeader>
     <ArtifactContent className="p-0">
+      <!-- TODO: Implement code block -->
       <!-- <CodeBlock
         className="border-none"
         code={code}

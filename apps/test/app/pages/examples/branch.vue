@@ -41,24 +41,19 @@ import {
 //       "And here's a third option. This balanced approach considers both performance and maintainability, making it suitable for most use cases.",
 //   },
 // ]
-const BranchA = {
-  template: `<div class="p-4 bg-blue-100 rounded">Branch A content</div>`,
-}
-const BranchB = {
-  template: `<div class="p-4 bg-green-100 rounded">Branch B content</div>`,
-}
-const BranchC = {
-  template: `<div class="p-4 bg-red-100 rounded">Branch C content</div>`,
-}
 
 const handleBranchChange = (branchIndex: number) => {
   console.log('Branch changed to:', branchIndex)
 }
 </script>
 <template>
-  <div class="h-[300px]">
+  <div class="h-[700px]">
     <Branch :default-branch="0" :onBranchChange="handleBranchChange">
-      <BranchMessages :branches="[BranchA, BranchB, BranchC]" />
+      <BranchMessages>
+        <div>Branch A1</div>
+        <div>Branch 2</div>
+        <div>Branch 3</div>
+      </BranchMessages>
       <BranchSelector from="user">
         <BranchPrevious />
         <BranchPage />

@@ -1,27 +1,62 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import {
+  Comment,
+  Fragment,
+  Text,
+  computed,
+  useSlots,
+  watchEffect,
+  type VNode,
+} from 'vue'
 import { useBranch } from './branch-context'
 import { cn } from '@repo/shadcn-ui/lib/utils'
 
-const props = defineProps<{
-  branches: Array<any>
-}>()
+const slots = useSlots()
 
 const { currentBranch, branches, setBranches } = useBranch()
 
+const flattenBranches = (nodes: VNode[] = []): VNode[] => {
+  const flattened: VNode[] = []
+
+  nodes.forEach((node) => {
+    if (node.type === Comment) {
+      return
+    }
+
+    if (node.type === Fragment && Array.isArray(node.children)) {
+      flattened.push(...flattenBranches(node.children as VNode[]))
+      return
+    }
+
+    if (node.type === Text) {
+      const content = typeof node.children === 'string' ? node.children : ''
+      if (content.trim().length === 0) {
+        return
+      }
+    }
+
+    flattened.push(node)
+  })
+
+  return flattened
+}
+
 const normalizedBranches = computed(() =>
-  Array.isArray(props.branches) ? props.branches : [props.branches],
+  flattenBranches(slots.default?.() ?? []),
 )
 
-watch(
-  () => normalizedBranches.value,
-  (val) => {
-    if (branches.value?.length !== val.length) {
-      setBranches(val)
-    }
-  },
-  { immediate: true },
-)
+watchEffect(() => {
+  const newBranches = normalizedBranches.value
+  const current = branches.value
+
+  const hasDifference =
+    current.length !== newBranches.length ||
+    newBranches.some((node, index) => node !== current[index])
+
+  if (hasDifference) {
+    setBranches(newBranches)
+  }
+})
 </script>
 
 <template>
