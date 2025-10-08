@@ -11,6 +11,7 @@ const { goToNext, totalBranches } = useBranch()
     aria-label="Next branch"
     class="size-7 shrink-0 rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:opacity-50"
     :disabled="totalBranches <= 1"
+    variant="outline"
     @click="goToNext"
     type="button"
   >
