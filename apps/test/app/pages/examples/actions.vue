@@ -36,6 +36,7 @@ const actions = [
     handler: () => {
       console.log('like')
     },
+    tooltip: 'I like this',
   },
   {
     label: 'Dislike',
@@ -43,6 +44,7 @@ const actions = [
     handler: () => {
       console.log('dislike')
     },
+    tooltip: 'I dislike this',
   },
 ]
 </script>
@@ -53,6 +55,7 @@ const actions = [
         v-for="action in actions"
         :key="action.label"
         :label="action.label"
+        :tooltip="action.tooltip"
         @click="action.handler"
       >
         <component :is="action.icon" :size="18" />
