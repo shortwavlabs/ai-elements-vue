@@ -24,7 +24,7 @@ defineProps<{
 
 <template>
   <TooltipProvider v-if="tooltip">
-    <Tooltip :open="true">
+    <Tooltip>
       <TooltipTrigger as-child>
         <Button
           class="relative size-9 p-1.5 text-muted-foreground hover:text-foreground"
