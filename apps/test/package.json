@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxt/fonts": "0.11.4",
+    "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/tailwindcss": "6.14.0",
     "@repo/elements": "workspace:*",
     "@repo/shadcn-ui": "workspace:*",

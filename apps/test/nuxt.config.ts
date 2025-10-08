@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   css: ['@repo/shadcn-ui/src/styles/globals.css'],
   devtools: { enabled: true },
   modules: [
+    '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     [
       '@nuxt/fonts',
@@ -20,6 +21,9 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  colorMode: {
+    classSuffix: '',
+  },
   vite: {
     plugins: [tsConfigPaths()],
     resolve: {

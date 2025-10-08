@@ -1,5 +1,19 @@
+<script setup lang="ts">
+import ModeToggle from './components/ModeToggle.vue'
+</script>
+
 <template>
-  <NuxtPage />
+  <div class="w-full h-full">
+    <header
+      class="w-full p-4 border-b border-muted-foreground flex items-center justify-between sticky top-0 bg-background z-10"
+    >
+      <h1 class="text-xl font-bold font-sans">AI Elements Vue</h1>
+      <div>
+        <ModeToggle />
+      </div>
+    </header>
+    <NuxtPage />
+  </div>
 </template>
 
 <style global>
