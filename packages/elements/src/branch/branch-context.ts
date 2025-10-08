@@ -24,15 +24,17 @@ export function provideBranch({
   const totalBranches = ref(0)
 
   const goToNext = () => {
-    if (currentBranch.value < totalBranches.value - 1) {
-      currentBranch.value++
-    }
+    currentBranch.value =
+      currentBranch.value < branches.value.length - 1
+        ? currentBranch.value + 1
+        : 0
   }
 
   const goToPrevious = () => {
-    if (currentBranch.value > 0) {
-      currentBranch.value--
-    }
+    currentBranch.value =
+      currentBranch.value > 0
+        ? currentBranch.value - 1
+        : branches.value.length - 1
   }
 
   const setBranches = (newBranches: any[]) => {
