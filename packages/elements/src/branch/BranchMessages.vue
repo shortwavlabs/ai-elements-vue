@@ -9,7 +9,6 @@ import {
   type VNode,
 } from 'vue'
 import { useBranch } from './branch-context'
-import { cn } from '@repo/shadcn-ui/lib/utils'
 
 const slots = useSlots()
 
@@ -60,16 +59,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div v-for="(branch, index) in normalizedBranches" :key="index">
-    <div
-      :class="
-        cn(
-          'grid gap-2 overflow-hidden [&>div]:pb-0',
-          index === currentBranch ? 'block' : 'hidden',
-        )
-      "
-    >
-      <component :is="branch" />
-    </div>
+  <div class="overflow-hidden [&>div]:pb-0">
+    <component :is="normalizedBranches[currentBranch]" />
   </div>
 </template>

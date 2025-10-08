@@ -50,6 +50,7 @@ const handleBranchChange = (branchIndex: number) => {
   <div class="h-[700px]">
     <Branch :default-branch="0" :onBranchChange="handleBranchChange">
       <BranchMessages>
+        <!-- TODO: update when messages component is built to match React demo -->
         <div>Branch A1</div>
         <div>Branch 2</div>
         <div>Branch 3</div>
