@@ -49,17 +49,15 @@ const actions = [
 ]
 </script>
 <template>
-  <div class="w-full h-[calc(100%-69px)] flex items-center justify-center">
-    <Actions>
-      <Action
-        v-for="action in actions"
-        :key="action.label"
-        :label="action.label"
-        :tooltip="action.tooltip"
-        @click="action.handler"
-      >
-        <component :is="action.icon" :size="18" />
-      </Action>
-    </Actions>
-  </div>
+  <Actions>
+    <Action
+      v-for="action in actions"
+      :key="action.label"
+      :label="action.label"
+      :tooltip="action.tooltip"
+      @click="action.handler"
+    >
+      <component :is="action.icon" :size="18" />
+    </Action>
+  </Actions>
 </template>

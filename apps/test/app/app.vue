@@ -12,7 +12,9 @@ import ModeToggle from './components/ModeToggle.vue'
         <ModeToggle />
       </div>
     </header>
-    <NuxtPage />
+    <div class="w-full h-[calc(100%-69px)] flex items-center justify-center">
+      <NuxtPage />
+    </div>
   </div>
 </template>
 
