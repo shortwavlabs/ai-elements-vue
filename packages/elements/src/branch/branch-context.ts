@@ -1,74 +1,66 @@
-// branch-context.ts
-import { inject, provide, reactive } from 'vue'
+// composables/useBranch.js
+import { ref, provide, inject, watch, Ref } from 'vue'
 
-export interface BranchContextType {
-  currentBranch: number
-  totalBranches: number
-  branches: any[]
-  setBranches: (branches: any[]) => void
-  goToPrevious: () => void
+const BRANCH_KEY = Symbol('BranchContext')
+
+type BranchContext = {
+  currentBranch: Ref<number>
+  totalBranches: Ref<number>
+  branches: Ref<any[]>
   goToNext: () => void
+  goToPrevious: () => void
+  setBranches: (newBranches: any[]) => void
 }
 
-const BranchContextKey = Symbol('BranchContext')
-
-export function provideBranch(
+export function provideBranch({
   defaultBranch = 0,
-  onBranchChange?: (i: number) => void,
-) {
-  const state = reactive({
-    currentBranch: defaultBranch,
-    branches: [] as any[],
-  })
+  onBranchChange,
+}: {
+  defaultBranch: number
+  onBranchChange: (branch: number) => void
+}) {
+  const currentBranch = ref(defaultBranch)
+  const branches = ref<any[]>([])
+  const totalBranches = ref(0)
 
-  const setBranches = (branches: any[]) => {
-    state.branches = branches
-  }
-
-  const handleBranchChange = (newBranch: number) => {
-    state.currentBranch = newBranch
-    onBranchChange?.(newBranch)
+  const goToNext = () => {
+    if (currentBranch.value < totalBranches.value - 1) {
+      currentBranch.value++
+    }
   }
 
   const goToPrevious = () => {
-    const newBranch =
-      state.currentBranch > 0
-        ? state.currentBranch - 1
-        : state.branches.length - 1
-    handleBranchChange(newBranch)
+    if (currentBranch.value > 0) {
+      currentBranch.value--
+    }
   }
 
-  const goToNext = () => {
-    const newBranch =
-      state.currentBranch < state.branches.length - 1
-        ? state.currentBranch + 1
-        : 0
-    handleBranchChange(newBranch)
+  const setBranches = (newBranches: any[]) => {
+    branches.value = newBranches
+    totalBranches.value = newBranches.length
   }
 
-  const context: BranchContextType = {
-    get currentBranch() {
-      return state.currentBranch
-    },
-    get totalBranches() {
-      return state.branches.length
-    },
-    get branches() {
-      return state.branches
-    },
-    setBranches,
-    goToPrevious,
+  watch(currentBranch, (newIndex) => {
+    onBranchChange?.(newIndex)
+  })
+
+  const context: BranchContext = {
+    currentBranch,
+    totalBranches,
+    branches,
     goToNext,
+    goToPrevious,
+    setBranches,
   }
 
-  provide(BranchContextKey, context)
+  provide(BRANCH_KEY, context)
+
   return context
 }
 
-export function useBranch(): BranchContextType {
-  const context = inject<BranchContextType | null>(BranchContextKey, null)
-  if (!context) {
-    throw new Error('Branch components must be used within a <Branch> provider')
-  }
-  return context
+export function useBranch() {
+  const context = inject(BRANCH_KEY)
+  if (!context)
+    throw new Error('Branch composables must be used within provideBranch()')
+  return context as BranchContext
 }

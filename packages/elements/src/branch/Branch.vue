@@ -2,11 +2,14 @@
 import { provideBranch } from './branch-context'
 
 const props = defineProps<{
-  defaultBranch?: number
-  onBranchChange?: (branch: number) => void
+  defaultBranch: number
+  onBranchChange: (branch: number) => void
 }>()
 
-provideBranch(props.defaultBranch, props.onBranchChange)
+provideBranch({
+  defaultBranch: props.defaultBranch,
+  onBranchChange: props.onBranchChange,
+})
 </script>
 <template>
   <div class="grid w-full gap-2 [&>div]:pb-0">

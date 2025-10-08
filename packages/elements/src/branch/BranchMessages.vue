@@ -16,7 +16,7 @@ const normalizedBranches = computed(() =>
 watch(
   () => normalizedBranches.value,
   (val) => {
-    if (branches.length !== val.length) {
+    if (branches.value?.length !== val.length) {
       setBranches(val)
     }
   },
