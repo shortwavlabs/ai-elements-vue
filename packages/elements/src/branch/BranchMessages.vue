@@ -55,7 +55,7 @@ watch(
 </script>
 
 <template>
-  <div class="overflow-hidden [&>div]:pb-0">
+  <div class="overflow-hidden">
     <component :is="normalizedBranches[currentBranch]" />
   </div>
 </template>

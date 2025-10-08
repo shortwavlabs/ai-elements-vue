@@ -48,14 +48,31 @@ const handleBranchChange = (branchIndex: number) => {
 </script>
 <template>
   <div class="h-[700px]">
+    <Branch
+      :default-branch="0"
+      :onBranchChange="handleBranchChange"
+      class="pb-2"
+    >
+      <BranchMessages>
+        <!-- TODO: update when messages component is built to match React demo -->
+        <div class="bg-yellow-400 w-[600px] p-4 rounded-md">Branch 1</div>
+        <div class="bg-orange-400 w-[600px] p-4 rounded-md">Branch 2</div>
+        <div class="bg-red-400 w-[600px] p-4 rounded-md">Branch 3</div>
+      </BranchMessages>
+      <BranchSelector from="user">
+        <BranchPrevious />
+        <BranchPage />
+        <BranchNext />
+      </BranchSelector>
+    </Branch>
     <Branch :default-branch="0" :onBranchChange="handleBranchChange">
       <BranchMessages>
         <!-- TODO: update when messages component is built to match React demo -->
-        <div>Branch A1</div>
-        <div>Branch 2</div>
-        <div>Branch 3</div>
+        <div class="bg-yellow-400 w-[600px] p-4 rounded-md">Branch 1</div>
+        <div class="bg-orange-400 w-[600px] p-4 rounded-md">Branch 2</div>
+        <div class="bg-red-400 w-[600px] p-4 rounded-md">Branch 3</div>
       </BranchMessages>
-      <BranchSelector from="user">
+      <BranchSelector from="assistant">
         <BranchPrevious />
         <BranchPage />
         <BranchNext />
