@@ -5,7 +5,7 @@ import {
   Text,
   computed,
   useSlots,
-  watchEffect,
+  watch,
   type VNode,
 } from 'vue'
 import { useBranch } from './branch-context'
@@ -14,48 +14,44 @@ const slots = useSlots()
 
 const { currentBranch, branches, setBranches } = useBranch()
 
-const flattenBranches = (nodes: VNode[] = []): VNode[] => {
-  const flattened: VNode[] = []
-
-  nodes.forEach((node) => {
+const flattenBranches = (nodes: VNode[] = []): VNode[] =>
+  nodes.reduce<VNode[]>((acc, node: VNode) => {
     if (node.type === Comment) {
-      return
+      return acc
     }
 
     if (node.type === Fragment && Array.isArray(node.children)) {
-      flattened.push(...flattenBranches(node.children as VNode[]))
-      return
+      acc.push(...flattenBranches(node.children as VNode[]))
+      return acc
     }
 
     if (node.type === Text) {
       const content = typeof node.children === 'string' ? node.children : ''
       if (content.trim().length === 0) {
-        return
+        return acc
       }
     }
 
-    flattened.push(node)
-  })
+    acc.push(node)
+    return acc
+  }, [])
 
-  return flattened
-}
+const haveSameBranches = (a: VNode[], b: VNode[]) =>
+  a.length === b.length && a.every((node, index) => node === b[index])
 
 const normalizedBranches = computed(() =>
   flattenBranches(slots.default?.() ?? []),
 )
 
-watchEffect(() => {
-  const newBranches = normalizedBranches.value
-  const current = branches.value
-
-  const hasDifference =
-    current.length !== newBranches.length ||
-    newBranches.some((node, index) => node !== current[index])
-
-  if (hasDifference) {
-    setBranches(newBranches)
-  }
-})
+watch(
+  normalizedBranches,
+  (newBranches) => {
+    if (!haveSameBranches(newBranches, branches.value)) {
+      setBranches(newBranches)
+    }
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
