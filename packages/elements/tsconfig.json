@@ -6,7 +6,8 @@
       "@repo/*": ["../*"],
       "@/components/*": ["../shadcn-ui/components/*"],
       "@/lib/*": ["../shadcn-ui/lib/*"]
-    }
+    },
+    "lib": ["ES2015", "DOM", "DOM.Iterable"]
   },
   "include": ["**/*.ts", "**/*.vue"],
   "exclude": ["node_modules"]
