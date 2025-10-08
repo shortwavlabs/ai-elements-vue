@@ -3,13 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "exports": {
-    ".": {
-      "import": "./src/index.ts",
-      "types": "./src/index.ts"
-    },
-    "./actions": {
-      "import": "./src/actions/index.ts",
-      "types": "./src/actions/index.ts"
+    "./*": {
+      "import": "./src/*/index.ts",
+      "types": "./src/*/index.ts"
     }
   },
   "scripts": {

@@ -49,7 +49,7 @@ const actions = [
 ]
 </script>
 <template>
-  <div class="w-full h-[calc(100%-64px)] flex items-center justify-center">
+  <div class="w-full h-[calc(100%-69px)] flex items-center justify-center">
     <Actions>
       <Action
         v-for="action in actions"
