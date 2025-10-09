@@ -1,4 +1,4 @@
-export { useBranch, provideBranch } from './branch-context'
+export * from './branch-context'
 export { default as Branch } from './Branch.vue'
 export { default as BranchMessages } from './BranchMessages.vue'
 export { default as BranchNext } from './BranchNext.vue'
