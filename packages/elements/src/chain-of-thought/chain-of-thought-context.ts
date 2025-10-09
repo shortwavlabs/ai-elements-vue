@@ -4,7 +4,6 @@ const CONTEXT_KEY = Symbol('ChainOfThoughtContext')
 
 export type ChainOfThoughtContext = {
   isOpen: Ref<boolean>
-  setIsOpen: (open: boolean) => void
 }
 
 export function provideChainOfThought(context: ChainOfThoughtContext) {

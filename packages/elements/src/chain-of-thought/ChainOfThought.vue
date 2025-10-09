@@ -6,11 +6,6 @@ import { provideChainOfThought } from './chain-of-thought-context'
 
 defineOptions({ inheritAttrs: false })
 
-// defineProps<{
-//   defaultOpen?: boolean
-//   onOpenChange?: (open: boolean) => void
-// }>()
-
 defineProps<{
   defaultOpen?: boolean
   onOpenChange?: (open: boolean) => void
@@ -21,13 +16,8 @@ const isOpen = defineModel<boolean>({
   default: true,
 })
 
-const setIsOpen = (open: boolean) => {
-  isOpen.value = open
-}
-
 provideChainOfThought({
   isOpen,
-  setIsOpen,
 })
 
 const rootClasses = computed(() =>
