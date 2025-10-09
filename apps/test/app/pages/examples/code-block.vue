@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { CodeBlock } from '@repo/elements/code-block'
-const code = `function MyComponent(props) {
-  return (
-    <div>
-      <h1>Hello, {props.name}!</h1>
-      <p>This is an example React component.</p>
-    </div>
-  );
+const code = `function factorial(n) {
+  if (n < 0) throw new Error("Factorial is not defined for negative numbers");
+  if (n === 0 || n === 1) return 1;
+  return n * factorial(n - 1);
 }`
 </script>
 <template>

@@ -9,7 +9,7 @@ defineProps<{
 </script>
 <template>
   <div
-    class="relative w-full overflow-hidden rounded-md border border-foreground/20 shadow-lg"
+    class="relative w-full overflow-hidden rounded-md border border-foreground/20"
   >
     <div class="relative">
       <SyntaxHighlighter
