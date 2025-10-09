@@ -8,7 +8,9 @@ defineProps<{
 }>()
 </script>
 <template>
-  <div class="relative w-full overflow-hidden rounded-md border">
+  <div
+    class="relative w-full overflow-hidden rounded-md border border-foreground/20 shadow-sm"
+  >
     <div class="relative">
       <SyntaxHighlighter
         :code="code"
