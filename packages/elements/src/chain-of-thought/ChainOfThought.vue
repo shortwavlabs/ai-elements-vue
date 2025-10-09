@@ -1,33 +1,25 @@
 <script setup lang="ts">
-import { computed, toRef, useAttrs, ref } from 'vue'
+import { computed, useAttrs, ref } from 'vue'
 import { Collapsible } from '@repo/shadcn-ui/components/ui/collapsible'
 import { cn } from '@repo/shadcn-ui/lib/utils'
 import { provideChainOfThought } from './chain-of-thought-context'
-// import { useControllableState } from './use-controllable-state'
 
 defineOptions({ inheritAttrs: false })
 
-const props = withDefaults(
-  defineProps<{
-    // open?: boolean
-    defaultOpen?: boolean
-    onOpenChange?: (open: boolean) => void
-  }>(),
-  {
-    defaultOpen: false,
-  },
-)
+// defineProps<{
+//   defaultOpen?: boolean
+//   onOpenChange?: (open: boolean) => void
+// }>()
+
+defineProps<{
+  defaultOpen?: boolean
+  onOpenChange?: (open: boolean) => void
+}>()
 
 const attrs = useAttrs()
-// const defaultOpen = toRef(props, 'defaultOpen')
-// const openRef = toRef(props, 'open')
-
-// const isOpen = useControllableState<boolean>({
-//   modelValue: openRef,
-//   defaultValue: defaultOpen.value,
-//   onUpdate: props.onOpenChange,
-// })
-const isOpen = ref(props.defaultOpen)
+const isOpen = defineModel<boolean>({
+  default: true,
+})
 
 const setIsOpen = (open: boolean) => {
   isOpen.value = open
@@ -54,6 +46,7 @@ const restAttrs = computed(() => {
 <template>
   <Collapsible
     v-model:open="isOpen"
+    v-on:update:open="(open) => onOpenChange?.(open)"
     :default-open="defaultOpen"
     :class="rootClasses"
     v-bind="restAttrs"

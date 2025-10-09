@@ -8,8 +8,6 @@ defineOptions({ inheritAttrs: false })
 
 const attrs = useAttrs()
 
-// useChainOfThought()
-
 const contentClasses = computed(() =>
   cn(
     'mt-2 space-y-3',
@@ -25,11 +23,7 @@ const restAttrs = computed(() => {
 </script>
 
 <template>
-  <CollapsibleContent
-    :class="contentClasses"
-    :force-mount="true"
-    v-bind="restAttrs"
-  >
+  <CollapsibleContent :class="contentClasses" v-bind="restAttrs">
     <slot />
   </CollapsibleContent>
 </template>

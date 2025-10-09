@@ -19,7 +19,6 @@
 
 - Components are written as `<script setup lang="ts">` SFCs and expect Tailwind classes supplied by `@repo/shadcn-ui/src/styles/globals.css` (auto-included in the Nuxt app).
 - Shared state is injected via Vue `provide`/`inject` contexts. Example: `branch-context.ts` drives navigation widgets and assumes `BranchMessages` children populate the branch array.
-- Use `useControllableState` from `chain-of-thought/` when exposing `modelValue` props to keep controlled/uncontrolled parity.
 - Actions and artifact components rely on shadcn buttons + tooltips; pass Lucide icon components via `<component :is="Icon" />` just like the examples in `apps/test/app/pages/examples/`.
 - When extending the library, add new domain folders with an `index.ts` re-export and update `package.json` exports if you need new subpaths.
 

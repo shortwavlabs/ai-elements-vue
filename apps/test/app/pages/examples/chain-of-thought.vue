@@ -50,11 +50,21 @@ const getStatus = (step: number) => {
   if (visibleSteps.value > step) return 'complete'
   return 'pending'
 }
+
+const open = ref(true)
+
+const onOpenChange = (isOpen: boolean) => {
+  console.log('Chain of Thought open state:', isOpen)
+}
 </script>
 
 <template>
   <div class="space-y-6 w-[435px] h-[490px]">
-    <ChainOfThought :default-open="true">
+    <ChainOfThought
+      v-model="open"
+      v-on:open-change="onOpenChange"
+      :default-open="open"
+    >
       <ChainOfThoughtHeader />
       <ChainOfThoughtContent>
         <ChainOfThoughtStep

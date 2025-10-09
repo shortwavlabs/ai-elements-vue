@@ -5,5 +5,4 @@ export { default as ChainOfThoughtSearchResults } from './ChainOfThoughtSearchRe
 export { default as ChainOfThoughtSearchResult } from './ChainOfThoughtSearchResult.vue'
 export { default as ChainOfThoughtContent } from './ChainOfThoughtContent.vue'
 export { default as ChainOfThoughtImage } from './ChainOfThoughtImage.vue'
-export * from './use-controllable-state'
 export * from './chain-of-thought-context'
