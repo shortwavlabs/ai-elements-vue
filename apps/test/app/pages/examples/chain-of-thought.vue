@@ -53,7 +53,7 @@ const getStatus = (step: number) => {
 </script>
 
 <template>
-  <div class="space-y-6 w-[435px]">
+  <div class="space-y-6 w-[435px] h-[490px]">
     <ChainOfThought :default-open="true">
       <ChainOfThoughtHeader />
       <ChainOfThoughtContent>
