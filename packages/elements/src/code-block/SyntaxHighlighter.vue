@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { h, computed, VNode, watch } from 'vue'
+import { h, computed, VNode } from 'vue'
 import { refractor } from 'refractor'
 import 'prism-themes/themes/prism-vsc-dark-plus.css'
 
@@ -17,9 +17,6 @@ const tree = computed(() => {
     return refractor.highlight(props.code.trim(), 'text')
   }
 })
-
-watch(tree, () => console.log('tree', tree.value), { immediate: true })
-
 // Recursive renderer
 function renderNodes(nodes: any[]): VNode[] {
   return nodes.map((node, index) => {
