@@ -29,7 +29,6 @@ const restAttrs = computed(() => {
     <Brain class="size-4" />
     <span class="flex-1 text-left">
       <slot>Chain of Thought</slot>
-      {{ isOpen }}
     </span>
     <ChevronDown
       :class="

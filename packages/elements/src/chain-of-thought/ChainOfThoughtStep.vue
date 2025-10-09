@@ -1,23 +1,17 @@
 <script setup lang="ts">
 import { computed, useAttrs } from 'vue'
 import type { Component } from 'vue'
-import { DotIcon } from 'lucide-vue-next'
+import { Dot } from 'lucide-vue-next'
 import { cn } from '@repo/shadcn-ui/lib/utils'
 
 defineOptions({ inheritAttrs: false })
 
-const props = withDefaults(
-  defineProps<{
-    icon?: Component
-    label: string
-    description?: string
-    status?: 'complete' | 'active' | 'pending'
-  }>(),
-  {
-    icon: DotIcon,
-    status: 'complete',
-  },
-)
+const props = defineProps<{
+  icon?: Component
+  label: string
+  description?: string
+  status: 'complete' | 'active' | 'pending'
+}>()
 
 const attrs = useAttrs()
 
@@ -44,7 +38,12 @@ const restAttrs = computed(() => {
 <template>
   <div :class="rootClasses" v-bind="restAttrs">
     <div class="relative mt-0.5">
-      <component :is="props.icon" class="size-4" />
+      <template v-if="props.icon">
+        <component :is="props.icon" class="size-4" />
+      </template>
+      <template v-else>
+        <Dot class="size-4" />
+      </template>
       <div class="-mx-px absolute top-7 bottom-0 left-1/2 w-px bg-border" />
     </div>
     <div class="flex-1 space-y-2">
