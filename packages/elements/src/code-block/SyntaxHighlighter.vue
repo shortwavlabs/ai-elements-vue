@@ -35,11 +35,7 @@ function renderNodes(nodes: any[]): VNode[] {
 </script>
 
 <template>
-  <pre
-    class="rounded-lg bg-neutral-900 text-neutral-100 p-4 overflow-x-auto font-mono text-sm"
-  >
-    <code :class="`language-${language}`">
-      <component :is="{ render: () => renderNodes(tree.children) }" />
-    </code>
-  </pre>
+  <pre class="rounded-lg bg-muted p-4">
+<code :class="`language-${language}`"><component :is="{ render: () => renderNodes(tree.children) }" /></code>
+</pre>
 </template>
