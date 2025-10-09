@@ -7,7 +7,9 @@
       "@/components/*": ["../shadcn-ui/components/*"],
       "@/lib/*": ["../shadcn-ui/lib/*"]
     },
-    "lib": ["ES2015", "DOM", "DOM.Iterable"]
+    "lib": ["ES2015", "DOM", "DOM.Iterable"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
   },
   "include": ["**/*.ts", "**/*.vue"],
   "exclude": ["node_modules"]
