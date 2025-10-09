@@ -35,8 +35,8 @@ function renderNodes(nodes: any[]): VNode[] {
 </script>
 
 <template>
-  <pre class="bg-muted p-4 flex items-center">
-<div v-if="showLineNumbers" class="text-right pr-4 opacity-50 select-none text-[13px] leading-5 flex flex-col items-center text-muted-foreground">
+  <pre class="bg-zinc-800 p-4 flex items-center">
+<div v-if="showLineNumbers" class="text-right pr-4 opacity-50 select-none text-[13px] leading-5 flex flex-col items-center text-gray-300">
   <div v-for="n in code.split('\n').length" :key="n">{{ n }}</div>
 </div>
 <code :class="`language-${language}`" class="!leading-5"><component :is="{ render: () => renderNodes(tree.children) }" /></code>
