@@ -20,11 +20,18 @@ const attrs = useAttrs()
 <template>
   <HoverCardTrigger asChild>
     <slot>
-      <Button type="button" variant="ghost" v-bind="attrs">
+      <Button
+        type="button"
+        variant="ghost"
+        class="group flex items-center gap-2"
+        v-bind="attrs"
+      >
         <span class="font-medium text-muted-foreground">
           {{ renderedPercent }}
         </span>
-        <ContextIcon />
+        <ContextIcon
+          class="transition-opacity duration-150 group-hover:opacity-40"
+        />
       </Button>
     </slot>
   </HoverCardTrigger>
