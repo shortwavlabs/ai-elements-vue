@@ -23,6 +23,10 @@ const total = computed(() =>
     notation: 'compact',
   }).format(maxTokens.value),
 )
+
+const progressValue = computed(() =>
+  Math.min(usedPercent.value * 100, PERCENT_MAX),
+)
 </script>
 <template>
   <div class="w-full space-y-2 p-3">
@@ -31,8 +35,8 @@ const total = computed(() =>
         <p>{{ displayPct }}</p>
         <p class="font-mono text-muted-foreground">{{ used }} / {{ total }}</p>
       </div>
-      <div class="space-y-2 relative">
-        <Progress class="bg-muted" :value="usedPercent * PERCENT_MAX" />
+      <div class="space-y-2">
+        <Progress class="bg-muted" :model-value="progressValue" />
       </div>
     </slot>
   </div>
