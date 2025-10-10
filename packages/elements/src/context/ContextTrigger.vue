@@ -21,7 +21,7 @@ const attrs = useAttrs()
   <HoverCardTrigger asChild>
     <slot>
       <Button type="button" variant="ghost" v-bind="attrs">
-        <span className="font-medium text-muted-foreground">
+        <span class="font-medium text-muted-foreground">
           {{ renderedPercent }}
         </span>
         <ContextIcon />

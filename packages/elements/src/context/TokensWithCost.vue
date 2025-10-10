@@ -19,7 +19,7 @@ const tokens = computed(() => {
   <div class="flex items-center space-x-2">
     <span class="text-muted-foreground">{{ tokens }}</span>
     <span v-if="props.costText" class="text-muted-foreground"
-      >* {{ props.costText }}</span
+      >• {{ props.costText }}</span
     >
   </div>
 </template>

@@ -27,14 +27,12 @@ const total = computed(() =>
 <template>
   <div class="w-full space-y-2 p-3">
     <slot>
-      <div className="flex items-center justify-between gap-3 text-xs">
+      <div class="flex items-center justify-between gap-3 text-xs">
         <p>{{ displayPct }}</p>
-        <p className="font-mono text-muted-foreground">
-          {{ used }} / {{ total }}
-        </p>
+        <p class="font-mono text-muted-foreground">{{ used }} / {{ total }}</p>
       </div>
-      <div className="space-y-2">
-        <Progress className="bg-muted" :value="usedPercent * PERCENT_MAX" />
+      <div class="space-y-2 relative">
+        <Progress class="bg-muted" :value="usedPercent * PERCENT_MAX" />
       </div>
     </slot>
   </div>
