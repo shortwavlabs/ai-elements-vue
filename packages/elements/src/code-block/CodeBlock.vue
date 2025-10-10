@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { toRef } from 'vue'
+import { provideCodeBlock } from './code-block-context'
 import SyntaxHighlighter from './SyntaxHighlighter.vue'
 
-defineProps<{
+const props = defineProps<{
   code: string
   language: string
   showLineNumbers?: boolean
 }>()
+
+const codeString = toRef(props, 'code')
+
+provideCodeBlock({ code: codeString })
 </script>
 <template>
   <div
@@ -17,6 +23,7 @@ defineProps<{
         :language="language"
         :showLineNumbers="showLineNumbers"
       />
+      <slot />
     </div>
   </div>
 </template>
