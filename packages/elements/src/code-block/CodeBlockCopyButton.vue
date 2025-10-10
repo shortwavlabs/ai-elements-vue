@@ -12,9 +12,12 @@ const setIsCopied = (value: boolean) => {
 
 const { code } = useCodeBlock()
 
+const emit = defineEmits<{
+  (e: 'copy'): void
+  (e: 'error', error: Error): void
+}>()
+
 const props = defineProps<{
-  onCopy?: () => void
-  onError?: (error: Error) => void
   timeout?: number
 }>()
 
@@ -23,17 +26,17 @@ const copyToClipboard = async (e: Event) => {
   e.preventDefault()
 
   if (typeof window === 'undefined' || !navigator.clipboard.writeText) {
-    props.onError?.(new Error('Clipboard API not available'))
+    emit('error', new Error('Clipboard API not available'))
     return
   }
 
   try {
     await navigator.clipboard.writeText(code.value)
     setIsCopied(true)
-    props.onCopy?.()
+    emit('copy')
     setTimeout(() => setIsCopied(false), props.timeout || 1000)
   } catch (error) {
-    props.onError?.(error as Error)
+    emit('error', error as Error)
   }
 }
 </script>
