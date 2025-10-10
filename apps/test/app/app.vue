@@ -7,7 +7,9 @@ import ModeToggle from './components/ModeToggle.vue'
     <header
       class="w-full p-4 border-b flex items-center justify-between sticky top-0 bg-background z-10"
     >
-      <h1 class="text-base font-bold font-sans">AI Elements Vue</h1>
+      <h1 class="text-base font-bold font-sans">
+        <NuxtLink to="/" class="hover:text-primary"> AI Elements Vue </NuxtLink>
+      </h1>
       <div>
         <ModeToggle />
       </div>

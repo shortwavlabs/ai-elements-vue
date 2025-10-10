@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import { nanoid } from 'nanoid'
 const items = [
-  { id: 1, name: 'Actions', url: '/examples/actions' },
-  { id: 2, name: 'Artifact', url: '/examples/artifact' },
-  { id: 3, name: 'Branch', url: '/examples/branch' },
-  { id: 4, name: 'Canvas', url: '/examples/canvas' },
-  { id: 5, name: 'Chain of Thought', url: '/examples/chain-of-thought' },
-  { id: 6, name: 'Code Block', url: '/examples/code-block' },
+  { id: nanoid(), name: 'Actions', url: '/examples/actions' },
+  { id: nanoid(), name: 'Artifact', url: '/examples/artifact' },
+  { id: nanoid(), name: 'Branch', url: '/examples/branch' },
+  { id: nanoid(), name: 'Canvas', url: '/examples/canvas' },
+  { id: nanoid(), name: 'Chain of Thought', url: '/examples/chain-of-thought' },
+  { id: nanoid(), name: 'Code Block', url: '/examples/code-block' },
+  { id: nanoid(), name: 'Context', url: '/examples/context' },
 ]
 </script>
 

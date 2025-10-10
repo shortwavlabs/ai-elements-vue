@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, useAttrs, ref } from 'vue'
+import { computed, useAttrs } from 'vue'
 import { Collapsible } from '@repo/shadcn-ui/components/ui/collapsible'
 import { cn } from '@repo/shadcn-ui/lib/utils'
 import { provideChainOfThought } from './chain-of-thought-context'
