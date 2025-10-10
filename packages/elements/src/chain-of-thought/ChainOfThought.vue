@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, useAttrs } from 'vue'
-import { Collapsible } from '@/components/ui/collapsible'
-import { cn } from '@/lib/utils'
+import { Collapsible } from '../../components/ui/collapsible'
+import { cn } from '../../lib/utils'
 import { provideChainOfThought } from './chain-of-thought-context'
 
 defineOptions({ inheritAttrs: false })

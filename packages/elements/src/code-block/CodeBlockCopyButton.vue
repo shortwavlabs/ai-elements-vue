@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { CheckIcon, CopyIcon } from 'lucide-vue-next'
-import { Button } from '@/components/ui/button'
+import { Button } from '../../components/ui/button'
 import { useCodeBlock } from './code-block-context'
 
 const isCopied = ref(false)

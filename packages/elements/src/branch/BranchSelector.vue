@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useBranch } from './branch-context'
-import { cn } from '@/lib/utils'
+import { cn } from '../../lib/utils'
 
 defineProps<{
   from: 'assistant' | 'user'
