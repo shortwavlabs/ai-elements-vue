@@ -7,8 +7,8 @@ import {
   ArtifactDescription,
   ArtifactHeader,
   ArtifactTitle,
-} from '@repo/elements/artifact'
-// import { CodeBlock } from '@repo/elements/code-block'
+} from 'ai-elements-vue/artifact'
+// import { CodeBlock } from 'ai-elements-vue/code-block'
 import {
   CopyIcon,
   DownloadIcon,

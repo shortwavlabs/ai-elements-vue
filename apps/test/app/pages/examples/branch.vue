@@ -7,7 +7,7 @@ import {
   BranchPage,
   BranchPrevious,
   BranchSelector,
-} from '@repo/elements/branch'
+} from 'ai-elements-vue/branch'
 
 // const userMessages = [
 //   {

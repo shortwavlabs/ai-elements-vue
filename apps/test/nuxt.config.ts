@@ -4,7 +4,7 @@ import tsConfigPaths from 'vite-tsconfig-paths'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  css: ['@repo/shadcn-ui/src/styles/globals.css'],
+  css: ['ai-elements-vue/globals.css'],
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/color-mode',

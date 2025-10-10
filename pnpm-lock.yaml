@@ -26,12 +26,12 @@ importers:
       '@nuxtjs/tailwindcss':
         specifier: 6.14.0
         version: 6.14.0(magicast@0.3.5)(yaml@2.8.1)
-      '@repo/elements':
-        specifier: workspace:*
-        version: link:../../packages/elements
       '@repo/shadcn-ui':
         specifier: workspace:*
         version: link:../../packages/shadcn-ui
+      ai-elements-vue:
+        specifier: workspace:*
+        version: link:../../packages/elements
       lucide-vue-next:
         specifier: ^0.544.0
         version: 0.544.0(vue@3.5.22(typescript@5.5.4))
@@ -136,8 +136,6 @@ importers:
       typescript:
         specifier: 5.5.4
         version: 5.5.4
-
-  packages/registry: {}
 
   packages/shadcn-ui:
     dependencies:

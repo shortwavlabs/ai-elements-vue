@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Canvas } from '@repo/elements/canvas'
+import { Canvas } from 'ai-elements-vue/canvas'
 
 const nodes = ref([
   { id: '1', type: 'input', label: 'Node 1', position: { x: 250, y: 5 } },

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CodeBlock, CodeBlockCopyButton } from '@repo/elements/code-block'
+import { CodeBlock, CodeBlockCopyButton } from 'ai-elements-vue/code-block'
 
 const code = `function factorial(n) {
   if (n < 0) {

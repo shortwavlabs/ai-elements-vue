@@ -8,7 +8,7 @@ import {
   ChainOfThoughtSearchResults,
   ChainOfThoughtSearchResult,
   ChainOfThoughtImage,
-} from '@repo/elements/chain-of-thought'
+} from 'ai-elements-vue/chain-of-thought'
 import { ImageIcon, Search } from 'lucide-vue-next'
 
 const visibleSteps = ref(0)

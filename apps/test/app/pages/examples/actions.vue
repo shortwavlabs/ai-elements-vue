@@ -6,7 +6,7 @@ import {
   ThumbsDownIcon,
   ThumbsUpIcon,
 } from 'lucide-vue-next'
-import { Action, Actions } from '@repo/elements/actions'
+import { Action, Actions } from 'ai-elements-vue/actions'
 
 const actions = [
   {
