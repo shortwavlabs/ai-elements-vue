@@ -6,6 +6,10 @@ import { provideChainOfThought } from './chain-of-thought-context'
 
 defineOptions({ inheritAttrs: false })
 
+const emit = defineEmits<{
+  (e: 'update:open', open: boolean): void
+}>()
+
 defineProps<{
   defaultOpen?: boolean
   onOpenChange?: (open: boolean) => void
@@ -36,7 +40,7 @@ const restAttrs = computed(() => {
 <template>
   <Collapsible
     v-model:open="isOpen"
-    v-on:update:open="(open) => onOpenChange?.(open)"
+    v-on:update:open="(open) => emit('update:open', open)"
     :default-open="defaultOpen"
     :class="rootClasses"
     v-bind="restAttrs"

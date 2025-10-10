@@ -62,8 +62,8 @@ const onOpenChange = (isOpen: boolean) => {
   <div class="space-y-6 w-[435px] h-[490px]">
     <ChainOfThought
       v-model="open"
-      v-on:open-change="onOpenChange"
       :default-open="open"
+      @update:open="onOpenChange"
     >
       <ChainOfThoughtHeader />
       <ChainOfThoughtContent>
