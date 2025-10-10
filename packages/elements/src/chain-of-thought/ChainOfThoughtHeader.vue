@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, useAttrs } from 'vue'
 import { Brain, ChevronDown } from 'lucide-vue-next'
-import { cn } from '@repo/shadcn-ui/lib/utils'
-import { CollapsibleTrigger } from '@repo/shadcn-ui/components/ui/collapsible'
+import { cn } from '@/lib/utils'
+import { CollapsibleTrigger } from '@/components/ui/collapsible'
 import { useChainOfThought } from './chain-of-thought-context'
 
 defineOptions({ inheritAttrs: false })

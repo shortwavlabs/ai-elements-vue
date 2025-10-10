@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useBranch } from './branch-context'
-import { cn } from '@repo/shadcn-ui/lib/utils'
+import { cn } from '@/lib/utils'
 
 defineProps<{
   from: 'assistant' | 'user'

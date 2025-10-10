@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, useAttrs } from 'vue'
-import { cn } from '@repo/shadcn-ui/lib/utils'
-import { Badge } from '@repo/shadcn-ui/components/ui/badge'
+import { cn } from '@/lib/utils'
+import { Badge } from '@/components/ui/badge'
 
 defineOptions({ inheritAttrs: false })
 

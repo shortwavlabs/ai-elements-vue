@@ -2,7 +2,7 @@
 import { computed, useAttrs } from 'vue'
 import type { Component } from 'vue'
 import { Dot } from 'lucide-vue-next'
-import { cn } from '@repo/shadcn-ui/lib/utils'
+import { cn } from '@/lib/utils'
 
 defineOptions({ inheritAttrs: false })
 

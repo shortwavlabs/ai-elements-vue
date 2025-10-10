@@ -69,15 +69,18 @@ importers:
 
   packages/elements:
     dependencies:
-      '@repo/shadcn-ui':
-        specifier: workspace:*
-        version: link:../shadcn-ui
       '@vue-flow/core':
         specifier: ^1.47.0
         version: 1.47.0(vue@3.5.22(typescript@5.9.3))
+      '@vueuse/core':
+        specifier: ^13.9.0
+        version: 13.9.0(vue@3.5.22(typescript@5.9.3))
       ai:
         specifier: 5.0.60
         version: 5.0.60(zod@4.1.11)
+      class-variance-authority:
+        specifier: ^0.7.1
+        version: 0.7.1
       lucide-vue-next:
         specifier: ^0.544.0
         version: 0.544.0(vue@3.5.22(typescript@5.9.3))
@@ -87,6 +90,9 @@ importers:
       refractor:
         specifier: ^5.0.0
         version: 5.0.0
+      reka-ui:
+        specifier: ^2.5.1
+        version: 2.5.1(typescript@5.9.3)(vue@3.5.22(typescript@5.9.3))
       vue:
         specifier: ^3.5.22
         version: 3.5.22(typescript@5.9.3)

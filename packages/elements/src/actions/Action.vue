@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { Button } from '@repo/shadcn-ui/components/ui/button'
+import { Button } from '@/components/ui/button'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@repo/shadcn-ui/components/ui/tooltip'
+} from '@/components/ui/tooltip'
 
 defineProps<{
   label: string

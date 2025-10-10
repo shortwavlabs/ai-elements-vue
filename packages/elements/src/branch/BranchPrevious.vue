@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button } from '@repo/shadcn-ui/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { ChevronLeftIcon } from 'lucide-vue-next'
 import { useBranch } from './branch-context'
 

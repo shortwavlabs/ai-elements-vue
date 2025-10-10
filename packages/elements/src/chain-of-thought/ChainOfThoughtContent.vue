@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { computed, useAttrs } from 'vue'
-import { CollapsibleContent } from '@repo/shadcn-ui/components/ui/collapsible'
-import { cn } from '@repo/shadcn-ui/lib/utils'
-import { useChainOfThought } from './chain-of-thought-context'
+import { CollapsibleContent } from '@/components/ui/collapsible'
+import { cn } from '@/lib/utils'
 
 defineOptions({ inheritAttrs: false })
 
