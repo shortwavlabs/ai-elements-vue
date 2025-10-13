@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/color-mode',
+    '@nuxtjs/mdc',
     '@nuxtjs/tailwindcss',
     [
       '@nuxt/fonts',
