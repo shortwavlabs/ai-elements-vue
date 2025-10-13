@@ -18,6 +18,7 @@
     "@repo/shadcn-ui": "workspace:*",
     "@vue-flow/core": "^1.47.0",
     "ai": "5.0.60",
+    "class-variance-authority": "^0.7.1",
     "lucide-vue-next": "^0.544.0",
     "nanoid": "^5.1.6",
     "prism-themes": "^1.9.0",

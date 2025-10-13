@@ -9,6 +9,7 @@ const items = [
   { id: nanoid(), name: 'Code Block', url: '/examples/code-block' },
   { id: nanoid(), name: 'Context', url: '/examples/context' },
   { id: nanoid(), name: 'Prompt Input', url: '/examples/prompt-input' },
+  { id: nanoid(), name: 'Message', url: '/examples/message' },
   { id: nanoid(), name: 'Reasoning', url: '/examples/reasoning' },
   { id: nanoid(), name: 'Response', url: '/examples/response' },
 ]
