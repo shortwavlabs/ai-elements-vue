@@ -8,8 +8,9 @@ const items = [
   { id: nanoid(), name: 'Chain of Thought', url: '/examples/chain-of-thought' },
   { id: nanoid(), name: 'Code Block', url: '/examples/code-block' },
   { id: nanoid(), name: 'Context', url: '/examples/context' },
-  { id: nanoid(), name: 'Response', url: '/examples/response' },
   { id: nanoid(), name: 'Prompt Input', url: '/examples/prompt-input' },
+  { id: nanoid(), name: 'Reasoning', url: '/examples/reasoning' },
+  { id: nanoid(), name: 'Response', url: '/examples/response' },
 ]
 </script>
 
