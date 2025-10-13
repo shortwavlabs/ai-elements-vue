@@ -10,6 +10,7 @@ const items = [
   { id: nanoid(), name: 'Context', url: '/examples/context' },
   { id: nanoid(), name: 'Conversation', url: '/examples/conversation' },
   { id: nanoid(), name: 'Image', url: '/examples/image' },
+  { id: nanoid(), name: 'Inline Citation', url: '/examples/inline-citation' },
   { id: nanoid(), name: 'Message', url: '/examples/message' },
   { id: nanoid(), name: 'Prompt Input', url: '/examples/prompt-input' },
   { id: nanoid(), name: 'Reasoning', url: '/examples/reasoning' },
