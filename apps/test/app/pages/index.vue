@@ -15,6 +15,7 @@ const items = [
   { id: nanoid(), name: 'Prompt Input', url: '/examples/prompt-input' },
   { id: nanoid(), name: 'Reasoning', url: '/examples/reasoning' },
   { id: nanoid(), name: 'Response', url: '/examples/response' },
+  { id: nanoid(), name: 'Sources', url: '/examples/sources' },
   { id: nanoid(), name: 'Tool', url: '/examples/tool' },
 ]
 </script>
